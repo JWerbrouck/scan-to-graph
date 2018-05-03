@@ -32,7 +32,7 @@ foaf:name a owl:DatatypeProperty .
     dcterms:issued "June 1st 2018"^^xsd:date ;
     dcterms:title "STG: Scan-to-Graph"@en ;
     dcterms:description """Scan-to-Graph (STG) is a simple vocabulary defining some concepts for linking instances with their geometry serialized in a certain format.
-It is meant as an aid for point-cloud based reconstruction of heritage or renovation projects, within a Linked Data context.
+It is meant as an aid for point-cloud based reconstruction of heritage or renovation projects, within a Linked Data context."""@en ;
     
 #################################
 # CLASSES
