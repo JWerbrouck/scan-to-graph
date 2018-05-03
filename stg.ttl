@@ -1,4 +1,4 @@
-@prefix : 			<https://github.com/JWerbrouck/Thesis/blob/master/stg.ttl#> .
+@prefix : 		<https://raw.githubusercontent.com/JWerbrouck/Thesis/master/stg.ttl#> .
 @prefix rdf:    	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix owl:    	<http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:   	<http://www.w3.org/2000/01/rdf-schema#> .
@@ -9,7 +9,7 @@
 @prefix foaf:   	<http://xmlns.com/foaf/0.1/> .
 @prefix dce: 		<http://purl.org/dc/elements/1.1/> .
 @prefix geo:		<http://www.opengis.net/ont/geosparql#> .
-@prefix stg: 		<https://github.com/JWerbrouck/Thesis/blob/master/stg.ttl#> .
+@prefix stg: 		<https://raw.githubusercontent.com/JWerbrouck/Thesis/master/stg.ttl#> .
 
 voaf:Vocabulary a owl:Class .
 dcterms:title a owl:AnnotationProperty .
