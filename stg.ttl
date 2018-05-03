@@ -9,7 +9,7 @@
 @prefix bot:		<https://w3id.org/bot#> .
 @prefix geo:		<http://www.opengis.net/ont/geosparql#> .
 
-@prefix stg: <https://github.com/JWerbrouck/Thesis/stg.ttl> .
+@prefix stg: <https://github.com/JWerbrouck/Thesis/blob/master/stg.ttl> .
 
 voaf:Vocabulary a owl:Class .
 dcterms:title a owl:AnnotationProperty .
