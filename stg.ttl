@@ -1,0 +1,156 @@
+@prefix : 			<https://raw.githubusercontent.com/JWerbrouck/Thesis/master/stg.ttl#> .
+@prefix rdf:    	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:    	<http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:   	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bot:		<https://w3id.org/bot#> .
+@prefix xsd:    	<http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:	<http://purl.org/dc/terms/> .
+@prefix voaf:   	<http://purl.org/vocommons/voaf#> .
+@prefix foaf:   	<http://xmlns.com/foaf/0.1/> .
+@prefix dce: 		<http://purl.org/dc/elements/1.1/> .
+@prefix geo:		<http://www.opengis.net/ont/geosparql#> .
+@prefix stg: 		<https://raw.githubusercontent.com/JWerbrouck/Thesis/master/stg.ttl#> .
+
+#################################
+# METADATA
+#################################
+
+<https://github.com/JWerbrouck/Thesis/blob/master/stg.ttl> rdf:type owl:Ontology ;
+    dce:modified "Mai 3rd 2018"^^xsd:string ;
+    owl:versionInfo "Mai 3rd 2018"^^xsd:string ;
+    dcterms:issued "June 1st 2018"^^xsd:date ;
+    dcterms:title "STG: Scan-to-Graph"@en ;
+    dcterms:description """Scan-to-Graph (STG) is a simple vocabulary defining some concepts for linking instances with their geometry serialized in a certain format.
+It is meant as an aid for point-cloud based reconstruction of heritage or renovation projects, within a Linked Data context."""@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+stg:RepresentingDocument a owl:Class ;
+		rdfs:label		"File with geometrical representation"@en ,
+			"Bestand met geometrie"@nl ;
+		
+		rdfs:comment	"A file that contains a geometrical representation of the whole or a part of the whole."@en ,
+						"Een bestand dat een geometrische representatie van het geheel of van een deel ervan bevat."@nl .
+stg:SourceFile a owl:Class ;
+		rdfs:label		"Source"@en ,
+			"Bron"@nl ;
+		rdfs:comment	"File that contains information about the real-world object and can serve as a modelling source."@en ,
+						"Bestand met informatie over het reële object, dat kan dienen als bronmateriaal bij het modelleren."@nl ;
+		
+		rdfs:subClassOf 	stg:RepresentingDocument.						
+						
+stg:PointCloudFile a owl:Class ;
+		rdfs:subClassOf stg:SourceFile ;
+        
+		rdfs:label      "Pointcloudfile"@en ,
+			"Puntwolkdocument"@nl ;
+        
+        rdfs:comment    "Refers to an external point cloud file that represents the instance geometrically."@en ,
+                        "Verwijst naar een extern puntwolkbestand dat het voorwerp geometrisch representeert."@nl .
+
+stg:RhinoFile rdf:type owl:Class ;
+           rdfs:subClassOf :RepresentingDocument ;
+		   rdfs:label ".3dm file"@en ,
+					".3dm bestand"@nl ;
+           rdfs:comment "Refers to an external Rhinoceros (McNeel) document (.3dm) that contains a geometrical representation of the whole model or parts of it."@en ,
+					"Verwijst naar een extern Rhinoceros (McNeel) document (.3dm) dat een geometrische representatie van het gehele model of delen ervan bevat."@nl .
+
+stg:RhinoID a rdfs:Datatype ;
+        rdfs:label      "Literal containing Rhino-ID"@en ,
+			"Literal met Rhino-ID"@nl ;
+        
+        rdfs:comment    "A Literal (as datatype) that encapsulates a Rhino-ID that identifies an object representation in an stg:RhinoDocument."@en ,
+                        "Een Literal (as datatype) die een Rhino-ID bevat dat een objectrepresentatie in een stg:RhinoDocument identificeert."@nl.		   
+			
+stg:STEPRepresentation rdf:type rdfs:Literal ;
+        rdfs:label      "STEP Literal"@en ; 
+        rdfs:comment    "A Literal that contains the raw STEP representation of the instance"@en .
+
+stg:OBJRepresentation a rdfs:Literal ;
+        rdfs:label      "OBJ Literal"@en ,
+			"OBJ Literal"@nl ;
+        
+        rdfs:comment    "A Literal that contains the raw OBJ (mesh) representation of the instance."@en ,
+                        "Een 'Literal' die de ruwe data van de OBJ (mesh) representatie van het voorwerp bevat."@nl .
+
+#################################
+# OBJECT PROPERTIES
+#################################
+
+stg:hasRepresentingFile a owl:ObjectProperty ;
+        rdfs:label      "Document with geometry"@en ,
+			"Document met geometrie"@nl ;
+        
+	rdfs:comment    "Relates an instance to a document that is its geometrical representation"@en ,
+        		"Relateert een objectinstantie aan een document dat dit geometrisch representeert"@nl ;
+        
+        rdfs:range  	stg:RepresentingDocument.
+
+stg:hasRhinoFile a owl:ObjectProperty ;
+        rdfs:label      "has Rhino File"@en ,
+			"heeft Rhino bestand"@nl ;
+
+	rdfs:comment    "Connects an instance with an external Rhino (.3dm) file that contains its geometry."@en ,
+                    "Verbindt een instantie met een extern Rhino (.3dm) document dat de geometrie van dit element bevat"@nl ;
+        
+		rdfs:subPropertyOf	stg:hasRepresentingFile ;
+		
+        rdfs:range      stg:RhinoFile .
+
+stg:hasPointCloudFile a owl:ObjectProperty ;
+        rdfs:label      "has Point Cloud File"@en ,
+			"heeft Puntwolkbestand"@nl ;
+
+	rdfs:comment    "Connects an instance with an external Point Cloud file that contains its geometry."@en ,
+                    "Verbindt een instantie met een externe puntwolk die de geometrie van dit element bevat"@nl ;
+        
+		rdfs:subPropertyOf	stg:hasRepresentingFile ;
+		
+        rdfs:range      stg:PointCloudFile.		
+		
+stg:asSTEP	a	owl:DatatypeProperty;
+		rdfs:label		"as STEP"@en ,
+			"als STEP"@nl ;
+		
+	rdfs:comment	"connects an instance with a Literal containing its raw STEP serialization"@en ,
+					"Verbindt een instantie met een Literal die de ruwe STEP-serializatie ervan behelst"@nl ;
+					
+	rdfs:subPropertyOf	geo:hasSerialization ;
+	
+	rdfs:domain		geo:Geometry ;
+	rdfs:range		stg:STEPRepresentation .
+	
+stg:asOBJ	a	owl:DatatypeProperty ;
+		rdfs:label		"as OBJ"@en ,
+			"als OBJ"@nl ;
+		
+	rdfs:comment	"connects an instance with a Literal containing its raw OBJ serialization"@en ,
+					"Verbindt een instantie met een Literal die de ruwe OBJ-serializatie ervan behelst"@nl ;
+					
+	rdfs:subPropertyOf	geo:hasSerialization ;
+	
+	rdfs:domain		geo:Geometry ;
+	rdfs:range		stg:OBJRepresentation .
+
+stg:hasRhinoID	a	owl:DatatypeProperty ;
+		rdfs:label		"reference to RhinoID"@en ,
+			"refereert naar RhinoID"@nl ;
+		
+	rdfs:comment	"connects an instance with a Literal containing a RhinoID as a reference to the object representation in the stg:RhinoFile"@en ,
+					"Verbindt een instantie met een Literal die de ruwe OBJ-serializatie ervan behelst"@nl ;
+	
+	rdfs:domain		geo:Geometry ;
+	rdfs:range		stg:RhinoID .
+
+stg:hasModellingRemark a owl:DatatypeProperty ;
+	rdfs:label		"Modelling remark"@en ,
+					"Modelleer opmerking"@nl ;
+					
+	rdfs:comment	"Statement about the geometry, such as metadata or an assumption that was made while modelling as-built geometry, based on ambiguous information provided by the sources, e.g. occlusions in a point cloud"@en ,
+					"Opmerking over de geometrie, zoals metadata of een modelleerveronderstelling gebaseerd op onduidelijkheden in het bronmateriaal, bv. occlusies in een puntwolk."@nl ;
+	
+	rdfs:domain		geo:Geometry ;
+	rdfs:range rdfs:Literal .
