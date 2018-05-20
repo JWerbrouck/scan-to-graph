@@ -1,0 +1,43 @@
+@prefix product:  	<https://w3id.org/product#> .
+@prefix stgp: 		<https://raw.githubusercontent.com/JWerbrouck/Thesis/master/stg.ttl#> .
+@prefix rdf:  		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  		<http://www.w3.org/2002/07/owl#> .
+
+stgp:Fireplace a owl:Class ;
+            rdfs:subClassOf product:BuildingElement ;
+			rdfs:label	"Fireplace"@en ,
+						"Open haard"@nl ;
+			rdfs:seeAlso	"http://vocab.getty.edu/aat/300052267.rdf" .
+			
+stgp:Capital a owl:Class ;
+            rdfs:subClassOf product:BuildingElement ;
+			rdfs:label	"Capital"@en ,
+						"Kapiteel"@nl ;
+			rdfs:seeAlso	"http://vocab.getty.edu/aat/300001662.rdf" .
+
+stgp:Shaft a owl:Class ;
+            rdfs:subClassOf product:BuildingElement ;
+			rdfs:label	"Shaft"@en ,
+						"Schacht"@nl ;
+			rdfs:seeAlso	"http://vocab.getty.edu/aat/300001754.rdf" .
+
+
+stgp:Base a owl:Class ;
+            rdfs:subClassOf product:BuildingElement ;
+			rdfs:label	"Base"@en ,
+						"Voet"@nl ;
+			rdfs:seeAlso	"http://vocab.getty.edu/aat/300233843.rdf" .
+
+stgp:Acanthus a owl:Class ;
+            rdfs:subClassOf product:BuildingElement ;
+			rdfs:label	"Acanthus"@en ,
+						"Acanthus"@nl ;
+			rdfs:seeAlso "http://vocab.getty.edu/aat/300164902.rdf" .
+
+stgp:Console a owl:Class ;
+            rdfs:subClassOf product:BuildingElement ;
+			rdfs:label	"Console"@en ,
+						"Console"@nl ;
+			rdfs:seeAlso "http://vocab.getty.edu/aat/300075330.rdf" .
+
