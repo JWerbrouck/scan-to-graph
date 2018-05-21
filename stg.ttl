@@ -34,7 +34,7 @@ stg:RepresentingDocument a owl:Class ;
 		
 		rdfs:comment	"A file that contains a geometrical representation of the whole or a part of the whole."@en ,
 				"Een bestand dat een geometrische representatie van het geheel of van een deel ervan bevat."@nl .
-stg:SourceFile a owl:Class ;
+stg:SourceFile 	a owl:Class ;
 		rdfs:label	"Source"@en ,
 				"Bron"@nl ;
 		rdfs:comment	"File that contains information about the real-world object and can serve as a modelling source."@en ,
@@ -42,7 +42,7 @@ stg:SourceFile a owl:Class ;
 		
 		rdfs:subClassOf 	stg:RepresentingDocument.						
 						
-stg:PointCloudFile a owl:Class ;
+stg:PointCloudFile 	a owl:Class ;
 		rdfs:subClassOf 	stg:SourceFile ;
         
 		rdfs:label      "Pointcloudfile"@en ,
@@ -51,8 +51,8 @@ stg:PointCloudFile a owl:Class ;
         	rdfs:comment    "Refers to an external point cloud file that represents the instance geometrically."@en ,
                         	"Verwijst naar een extern puntwolkbestand dat het voorwerp geometrisch representeert."@nl .
 
-stg:RhinoFile rdf:type owl:Class ;
-           	rdfs:subClassOf :RepresentingDocument ;
+stg:RhinoFile 	rdf:type owl:Class ;
+           	rdfs:subClassOf stg:RepresentingDocument ;
 
 		rdfs:label 	".3dm file"@en ,
 				".3dm bestand"@nl ;
@@ -60,19 +60,25 @@ stg:RhinoFile rdf:type owl:Class ;
            	rdfs:comment 	"Refers to an external Rhinoceros (McNeel) document (.3dm) that contains a geometrical representation of the whole model or parts of it."@en ,
 				"Verwijst naar een extern Rhinoceros (McNeel) document (.3dm) dat een geometrische representatie van het gehele model of delen ervan bevat."@nl .
 
-stg:RhinoID a rdfs:Datatype ;
+stg:RhinoID 	rdf:type rdfs:Datatype ;
         	rdfs:label      "Literal containing Rhino-ID"@en ,
 				"Literal met Rhino-ID"@nl ;
         
         	rdfs:comment    "A Literal (as datatype) that encapsulates a Rhino-ID that identifies an object representation in an stg:RhinoDocument."@en ,
                         	"Een Literal (as datatype) die een Rhino-ID bevat dat een objectrepresentatie in een stg:RhinoDocument identificeert."@nl.		   
 			
-stg:STEPRepresentation rdf:type rdfs:Literal ;
+stg:STEPRepresentation 	rdf:type rdfs:Literal ;
         	rdfs:label      "STEP Literal"@en ,
 				"STEP Literal"@nl ;
 
         	rdfs:comment    "A Literal that contains the raw STEP representation of the instance"@en ,
 				"Een Literal die de STEP representatie van het object als ruwe data beschrijft"@nl .
+
+stg:ProjectOrigin	rdf:type owl:Class ;
+		rdfs:label	"Project Origin"@en ;
+		rdfs:comment	"A geometry referring to the Project's Origin"@en ;
+		rdfs:subClassOf	geo:Geometry .
+		
 
 #################################
 # OBJECT PROPERTIES
@@ -132,9 +138,15 @@ stg:hasRhinoID	a	owl:DatatypeProperty ;
 		rdfs:domain		geo:Geometry ;
 		rdfs:range		stg:RhinoID .
 
+stg:hasOrigin a owl:ObjectProperty ;
+		rdfs:subClassOf geo:hasGeometry ;
+		rdfs:label	"links to Project Origin"@en ;
+		rdfs:domain	geo:Feature ;
+		rdfs:range	stg:ProjectOrigin .
+
 stg:hasModellingRemark a owl:DatatypeProperty ;
 		rdfs:label	"Modelling remark"@en ,
-				"Modelleer opmerking"@nl ;
+				"Modelleeropmerking"@nl ;
 
 		rdfs:comment	"Statement about the geometry, such as metadata or an assumption that was made while modelling as-built geometry, based on ambiguous information provided by the sources, e.g. occlusions in a point cloud"@en ,
 				"Opmerking over de geometrie, zoals metadata of een modelleerveronderstelling gebaseerd op onduidelijkheden in het bronmateriaal, bv. occlusies in een puntwolk."@nl ;
