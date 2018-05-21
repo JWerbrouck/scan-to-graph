@@ -1,4 +1,4 @@
-@prefix product:  	<https://w3id.org/product#> .
+@prefix product:  	<https://w3id.org/product/BuildingElements#> .
 @prefix stgp: 		<https://raw.githubusercontent.com/JWerbrouck/Thesis/master/stg.ttl#> .
 @prefix rdf:  		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
