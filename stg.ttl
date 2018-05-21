@@ -67,7 +67,7 @@ stg:RhinoID 	rdf:type rdfs:Datatype ;
         	rdfs:comment    "A Literal (as datatype) that encapsulates a Rhino-ID that identifies an object representation in an stg:RhinoDocument."@en ,
                         	"Een Literal (as datatype) die een Rhino-ID bevat dat een objectrepresentatie in een stg:RhinoDocument identificeert."@nl.		   
 			
-stg:STEPRepresentation 	rdf:type rdfs:Literal ;
+stg:STEPRepresentation 	rdf:type rdfs:DataType ;
         	rdfs:label      "STEP Literal"@en ,
 				"STEP Literal"@nl ;
 
