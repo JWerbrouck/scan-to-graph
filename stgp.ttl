@@ -9,6 +9,12 @@ stgp:Fireplace a owl:Class ;
 			rdfs:label	"Fireplace"@en ,
 						"Open haard"@nl ;
 			rdfs:seeAlso	"http://vocab.getty.edu/aat/300052267.rdf" .
+
+stgp:Fireplace_hood a owl:Class ;
+            rdfs:subClassOf product:BuildingElement ;
+			rdfs:label	"Fireplace hood"@en ,
+					"Overkapping haard"@nl ;
+			rdfs:seeAlso "http://vocab.getty.edu/page/aat/300069730.rdf" .
 			
 stgp:Capital a owl:Class ;
             rdfs:subClassOf product:BuildingElement ;
@@ -29,9 +35,27 @@ stgp:Base a owl:Class ;
 						"Voet"@nl ;
 			rdfs:seeAlso	"http://vocab.getty.edu/aat/300233843.rdf" .
 
+stgp:WindowFrame a owl:Class ;
+            rdfs:subClassOf product:BuildingElement ;
+			rdfs:label	"Window frame"@en ,
+					"Raamkader"@nl ;
+			rdfs:seeAlso "http://vocab.getty.edu/page/aat/300003118.rdf" .
+
+stgp:WindowPane a owl:Class ;
+            rdfs:subClassOf product:BuildingElement ;
+			rdfs:label	"Window pane"@en ,
+					"glaspaneel"@nl ;
+			rdfs:seeAlso "http://vocab.getty.edu/page/aat/300209746.rdf" .
+
+stgp:Vault a owl:Class ;
+            rdfs:subClassOf product:BuildingElement ;
+			rdfs:label	"Vault"@en ,
+					"Gewelf"@nl ;
+			rdfs:seeAlso "http://vocab.getty.edu/page/aat/300076608.rdf" .
+
+
 stgp:Acanthus a owl:Class ;
             rdfs:subClassOf product:BuildingElement ;
 			rdfs:label	"Acanthus"@en ,
 						"Acanthus"@nl ;
 			rdfs:seeAlso "http://vocab.getty.edu/aat/300164902.rdf" .
-
