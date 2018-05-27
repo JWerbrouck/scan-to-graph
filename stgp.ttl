@@ -10,7 +10,7 @@ stgp:Fireplace a owl:Class ;
 						"Open haard"@nl ;
 			rdfs:seeAlso	"http://vocab.getty.edu/aat/300052267.rdf" .
 
-stgp:Fireplace_hood a owl:Class ;
+stgp:Fireplace_Hood a owl:Class ;
             rdfs:subClassOf product:BuildingElement ;
 			rdfs:label	"Fireplace hood"@en ,
 					"Overkapping haard"@nl ;
