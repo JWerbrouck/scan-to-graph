@@ -28,7 +28,7 @@ It is meant as an aid for point-cloud based reconstruction of heritage or renova
 #    Classes
 #################################################################
 
-stg:RepresentingDocument a owl:Class ;
+stg:RepresentingFile a owl:Class ;
 		rdfs:label	"File with geometrical representation"@en ,
 				"Bestand met geometrie"@nl ;
 		
@@ -40,7 +40,7 @@ stg:SourceFile 	a owl:Class ;
 		rdfs:comment	"File that contains information about the real-world object and can serve as a modelling source."@en ,
 				"Bestand met informatie over het reële object, dat kan dienen als bronmateriaal bij het modelleren."@nl ;
 		
-		rdfs:subClassOf 	stg:RepresentingDocument.						
+		rdfs:subClassOf 	stg:RepresentingFile.						
 						
 stg:PointCloudFile 	a owl:Class ;
 		rdfs:subClassOf 	stg:SourceFile ;
@@ -52,7 +52,7 @@ stg:PointCloudFile 	a owl:Class ;
                         	"Verwijst naar een extern puntwolkbestand dat het voorwerp geometrisch representeert."@nl .
 
 stg:RhinoFile 	rdf:type owl:Class ;
-           	rdfs:subClassOf stg:RepresentingDocument ;
+           	rdfs:subClassOf stg:RepresentingFile ;
 
 		rdfs:label 	".3dm file"@en ,
 				".3dm bestand"@nl ;
@@ -161,11 +161,21 @@ stg:hasModellingRemark a 	owl:ObjectProperty ;
 		rdfs:label	"Modelling remark"@en ,
 				"Modelleeropmerking"@nl ;
 
-		rdfs:comment	"Statement about the geometry, such as metadata or an assumption that was made while modelling as-built geometry, based on ambiguous information provided by the sources, e.g. occlusions in a point cloud"@en ,
-				"Opmerking over de geometrie, zoals metadata of een modelleerveronderstelling gebaseerd op onduidelijkheden in het bronmateriaal, bv. occlusies in een puntwolk."@nl ;
+		rdfs:comment	"Statement about the geometry, such as metadata or an assumption that was made while modelling as-built geometry"@en ,
+				"Opmerking over de geometrie, zoals metadata of een modelleerveronderstelling"@nl ;
 
 		rdfs:domain	geo:Geometry ;
 		rdfs:range 	stg:ModellingRemark .
+
+stg:hasOcclusion a 	owl:ObjectProperty ;
+		rdfs:label	"Occlusion"@en ,
+				"Occlusion"@nl ;
+		rdfs:subPropertyOf stg:hasModellingRemark ;
+		rdfs:comment	"Defines a geometry as an occluded area"@en ,
+				"Definieert een geometrie als een occluded area."@nl ;
+
+		rdfs:domain	geo:Geometry ;
+		rdfs:range 	stg:OccludedGeometry .
 
 stg:denotesRemark	a	owl:DatatypeProperty ;
 		rdfs:label	"reference to modelling remark"@en ,
