@@ -89,7 +89,7 @@ stg:Assumption	rdf:type owl:Class ;
 		rdfs:subClassOf	stg:ModellingRemark .
 
 stg:OccludedGeometry	rdf:type owl:Class ;
-		rdfs:label	"Assumption"@en ;
+		rdfs:label		"Assumption"@en ;
 		rdfs:comment	"Indicates whether a geometry contains a occluded area"@en ;
 		rdfs:subClassOf	stg:ModellingRemark .
 
@@ -175,4 +175,4 @@ stg:denotesRemark	a	owl:DatatypeProperty ;
 				"Verbindt een geometrie met een Literal (string) die informatie over het modelleerprocess bevat"@nl ;
 
 		rdfs:domain	geo:Geometry ;
-		rdfs:range	stg:Assumption .
+		rdfs:range stg:Assumption .
