@@ -90,7 +90,7 @@ stg:Assumption	rdf:type owl:Class ;
 
 stg:OccludedGeometry	rdf:type owl:Class ;
 		rdfs:label	"Assumption"@en ;
-		rdfs:comment	"Indicates whether a geometry contains a occluded area"@en .
+		rdfs:comment	"Indicates whether a geometry contains a occluded area"@en ;
 		rdfs:subClassOf	stg:ModellingRemark .
 
 #################################
