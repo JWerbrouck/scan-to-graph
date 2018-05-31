@@ -209,8 +209,8 @@ stg:hasLOA a 	owl:ObjectProperty ;
 		rdfs:range 	stg:LevelOfAccuracy .
 
 stg:usedDeviationAnalysis a 	owl:DatatypeProperty ;
-		rdfs:label	"Deviation Analysis"@en ,
-		rdfs:comment	"States that a geometry has a certain (represented) LOA (USIBD definition)"@en ,
+		rdfs:label	"Deviation Analysis"@en ;
+		rdfs:comment	"States that a geometry has a certain (represented) LOA (USIBD definition)"@en ;
 
 		rdfs:domain	stg:LevelOfAccuracy ;
 		rdfs:range 	rdfs:Literal .
