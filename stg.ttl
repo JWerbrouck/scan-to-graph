@@ -216,8 +216,8 @@ stg:usedDeviationAnalysis a 	owl:DatatypeProperty ;
 		rdfs:range 	rdfs:Literal .
 
 stg:hasLOAvalue a 	owl:DatatypeProperty ;
-		rdfs:label	"LOA value"@en ,
-		rdfs:comment	"States the represented LOA value of a geometry after a geometric deviation analysis"@en ,
+		rdfs:label	"LOA value"@en ;
+		rdfs:comment	"States the represented LOA value of a geometry after a geometric deviation analysis"@en ;
 
 		rdfs:domain	stg:LevelOfAccuracy ;
 		rdfs:range 	rdfs:Literal .
