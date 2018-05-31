@@ -8,54 +8,54 @@ stgp:Fireplace a owl:Class ;
             rdfs:subClassOf product:BuildingElement ;
 			rdfs:label	"Fireplace"@en ,
 						"Open haard"@nl ;
-			rdfs:seeAlso	http://vocab.getty.edu/aat/300052267 .
+			rdfs:seeAlso	<http://vocab.getty.edu/aat/300052267> .
 
 stgp:Fireplace_hood a owl:Class ;
             rdfs:subClassOf product:BuildingElement ;
 			rdfs:label	"Fireplace hood"@en ,
 					"Overkapping haard"@nl ;
-			rdfs:seeAlso "http://vocab.getty.edu/page/aat/300069730" .
+			rdfs:seeAlso <http://vocab.getty.edu/page/aat/300069730> .
 			
 stgp:Capital a owl:Class ;
             rdfs:subClassOf product:BuildingElement ;
 			rdfs:label	"Capital"@en ,
 						"Kapiteel"@nl ;
-			rdfs:seeAlso	"http://vocab.getty.edu/aat/300001662" .
+			rdfs:seeAlso	<http://vocab.getty.edu/aat/300001662> .
 
 stgp:Shaft a owl:Class ;
             rdfs:subClassOf product:BuildingElement ;
 			rdfs:label	"Shaft"@en ,
 						"Schacht"@nl ;
-			rdfs:seeAlso	"http://vocab.getty.edu/aat/300001754" .
+			rdfs:seeAlso	<http://vocab.getty.edu/aat/300001754> .
 
 
 stgp:Base a owl:Class ;
             rdfs:subClassOf product:BuildingElement ;
 			rdfs:label	"Base"@en ,
 						"Voet"@nl ;
-			rdfs:seeAlso	"http://vocab.getty.edu/aat/300233843" .
+			rdfs:seeAlso	<http://vocab.getty.edu/aat/300233843> .
 
 stgp:WindowFrame a owl:Class ;
             rdfs:subClassOf product:BuildingElement ;
 			rdfs:label	"Window frame"@en ,
 					"Raamkader"@nl ;
-			rdfs:seeAlso "http://vocab.getty.edu/page/aat/300003118" .
+			rdfs:seeAlso <http://vocab.getty.edu/page/aat/300003118> .
 
 stgp:WindowPane a owl:Class ;
             rdfs:subClassOf product:BuildingElement ;
 			rdfs:label	"Window pane"@en ,
 					"glaspaneel"@nl ;
-			rdfs:seeAlso "http://vocab.getty.edu/page/aat/300209746" .
+			rdfs:seeAlso <http://vocab.getty.edu/page/aat/300209746> .
 
 stgp:Vault a owl:Class ;
             rdfs:subClassOf product:BuildingElement ;
 			rdfs:label	"Vault"@en ,
 					"Gewelf"@nl ;
-			rdfs:seeAlso "http://vocab.getty.edu/page/aat/300076608" .
+			rdfs:seeAlso <http://vocab.getty.edu/page/aat/300076608> .
 
 
 stgp:Acanthus a owl:Class ;
             rdfs:subClassOf product:BuildingElement ;
 			rdfs:label	"Acanthus"@en ,
 						"Acanthus"@nl ;
-			rdfs:seeAlso "http://vocab.getty.edu/aat/300164902" .
+			rdfs:seeAlso <http://vocab.getty.edu/aat/300164902> .
