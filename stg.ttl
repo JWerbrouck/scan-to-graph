@@ -48,8 +48,17 @@ stg:PointCloudFile 	a owl:Class ;
 		rdfs:label      "Pointcloudfile"@en ,
 				"Puntwolkdocument"@nl ;
         
-        	rdfs:comment    "Refers to an external point cloud file that represents the instance geometrically."@en ,
-                        	"Verwijst naar een extern puntwolkbestand dat het voorwerp geometrisch representeert."@nl .
+        	rdfs:comment    "Refers to an external point cloud file that represents the instance geometrically (URI)."@en ,
+                        	"Verwijst naar een extern puntwolkbestand dat het voorwerp geometrisch representeert (URI)."@nl .
+
+stg:LocalPointCloudFile 	a owl:Class ;
+		rdfs:subClassOf 	stg:SourceFile ;
+        
+		rdfs:label      "Pointcloudfile"@en ,
+				"Puntwolkdocument"@nl ;
+        
+        	rdfs:comment    "Refers to an external (local) point cloud file that represents the instance geometrically."@en ,
+                        	"Verwijst naar een extern (lokaal) puntwolkbestand dat het voorwerp geometrisch representeert."@nl .
 
 stg:RhinoFile 	rdf:type owl:Class ;
            	rdfs:subClassOf stg:RepresentingFile ;
@@ -74,6 +83,10 @@ stg:STEPRepresentation 	rdf:type rdfs:DataType ;
         	rdfs:comment    "A Literal that contains the raw STEP representation of the instance"@en ,
 				"Een Literal die de STEP representatie van het object als ruwe data beschrijft"@nl .
 
+stg:InternalGeometry	rdf:type owl:Class ;
+		rdfs:label	"Internal Geometry"@en ;
+		rdfs:comment	"Indicates whether a geometry is the part of an object contained in another object (e.g. part of a console is 'internal' in a wall)"@en .
+
 stg:ProjectOrigin	rdf:type owl:Class ;
 		rdfs:label	"Project Origin"@en ;
 		rdfs:comment	"A geometry referring to the Project's Origin"@en ;
@@ -86,6 +99,11 @@ stg:ModellingRemark	rdf:type owl:Class ;
 stg:Assumption	rdf:type owl:Class ;
 		rdfs:label	"Assumption"@en ;
 		rdfs:comment	"An assumption that contains information about a geometry"@en ;
+		rdfs:subClassOf	stg:ModellingRemark .
+
+stg:LevelOfAccuracy rdf:type owl:Class ;
+		rdfs:label	"USIBD LOA"@en ;
+		rdfs:comment	"States the (represented) LOA of a geometry after deviation analysis (definition according to USIBD LOA specification)"@en ;
 		rdfs:subClassOf	stg:ModellingRemark .
 
 stg:OccludedGeometry	rdf:type owl:Class ;
@@ -176,6 +194,31 @@ stg:hasOcclusion a 	owl:ObjectProperty ;
 
 		rdfs:domain	geo:Geometry ;
 		rdfs:range 	stg:OccludedGeometry .
+
+stg:hasLOA a 	owl:ObjectProperty ;
+		rdfs:label	"Level of Accuracy"@en ,
+				"Level of Accuracy"@nl ;
+		rdfs:subPropertyOf stg:hasModellingRemark ;
+
+		rdfs:comment	"States that a geometry has a certain (represented) LOA (USIBD definition)"@en ,
+				"Linkt een geometrie aan een bepaalde (represented) LOA (zoals gedefinieerd door USIBD)."@nl ;
+
+		rdfs:domain	geo:Geometry ;
+		rdfs:range 	stg:LevelOfAccuracy .
+
+stg:usedDeviationAnalysis a 	owl:DatatypeProperty ;
+		rdfs:label	"Deviation Analysis"@en ,
+		rdfs:comment	"States that a geometry has a certain (represented) LOA (USIBD definition)"@en ,
+
+		rdfs:domain	stg:LevelOfAccuracy ;
+		rdfs:range 	rdfs:Literal .
+
+stg:hasLOAvalue a 	owl:DatatypeProperty ;
+		rdfs:label	"LOA value"@en ,
+		rdfs:comment	"States the represented LOA value of a geometry after a geometric deviation analysis"@en ,
+
+		rdfs:domain	stg:LevelOfAccuracy ;
+		rdfs:range 	rdfs:Literal .
 
 stg:denotesRemark	a	owl:DatatypeProperty ;
 		rdfs:label	"reference to modelling remark"@en ,
