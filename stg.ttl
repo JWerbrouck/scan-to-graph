@@ -51,15 +51,6 @@ stg:PointCloudFile 	a owl:Class ;
         	rdfs:comment    "Refers to an external point cloud file that represents the instance geometrically (URI)."@en ,
                         	"Verwijst naar een extern puntwolkbestand dat het voorwerp geometrisch representeert (URI)."@nl .
 
-stg:RhinoFile 	rdf:type owl:Class ;
-           	rdfs:subClassOf stg:RepresentingFile ;
-
-		rdfs:label 	".3dm file"@en ,
-				".3dm bestand"@nl ;
-
-           	rdfs:comment 	"Refers to an external Rhinoceros (McNeel) document (.3dm) that contains a geometrical representation of the whole model or parts of it."@en ,
-				"Verwijst naar een extern Rhinoceros (McNeel) document (.3dm) dat een geometrische representatie van het gehele model of delen ervan bevat."@nl .
-
 stg:RhinoID 	rdf:type rdfs:Datatype ;
         	rdfs:label      "Literal containing Rhino-ID"@en ,
 				"Literal met Rhino-ID"@nl ;
@@ -115,7 +106,7 @@ stg:hasRepresentingFile a owl:ObjectProperty ;
 
 		rdfs:range  	stg:RepresentingDocument.
 
-stg:hasRhinoFile a owl:ObjectProperty ;
+stg:hasRhinoFile a owl:DatatypeProperty ;
 		rdfs:label      "has Rhino File"@en ,
 				"heeft Rhino bestand"@nl ;
 
@@ -124,7 +115,7 @@ stg:hasRhinoFile a owl:ObjectProperty ;
         
 		rdfs:subPropertyOf	stg:hasRepresentingFile ;
 		
-        	rdfs:range      stg:RhinoFile .
+        	rdfs:range      rdfs:Literal .
 
 stg:hasPointCloudFile a owl:ObjectProperty ;
 		rdfs:label      "has Point Cloud File"@en ,
