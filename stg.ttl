@@ -51,15 +51,6 @@ stg:PointCloudFile 	a owl:Class ;
         	rdfs:comment    "Refers to an external point cloud file that represents the instance geometrically (URI)."@en ,
                         	"Verwijst naar een extern puntwolkbestand dat het voorwerp geometrisch representeert (URI)."@nl .
 
-stg:LocalPointCloudFile 	a owl:Class ;
-		rdfs:subClassOf 	stg:SourceFile ;
-        
-		rdfs:label      "Pointcloudfile"@en ,
-				"Puntwolkdocument"@nl ;
-        
-        	rdfs:comment    "Refers to an external (local) point cloud file that represents the instance geometrically."@en ,
-                        	"Verwijst naar een extern (lokaal) puntwolkbestand dat het voorwerp geometrisch representeert."@nl .
-
 stg:RhinoFile 	rdf:type owl:Class ;
            	rdfs:subClassOf stg:RepresentingFile ;
 
@@ -144,7 +135,18 @@ stg:hasPointCloudFile a owl:ObjectProperty ;
 
 		rdfs:subPropertyOf	stg:hasRepresentingFile ;
 
-		rdfs:range      stg:PointCloudFile.		
+		rdfs:range      stg:PointCloudFile .
+
+stg:hasLocalVersion a owl:ObjectProperty ;
+		rdfs:label      "has Point Cloud File"@en ,
+				"heeft Puntwolkbestand"@nl ;
+
+		rdfs:comment    "Connects an instance with an external (local) file that contains its geometry."@en ,
+				"Verbindt een instantie met een extern (lokaal) bestand dat de geometrie van dit element bevat"@nl ;
+
+		rdfs:subPropertyOf	stg:hasRepresentingFile ;
+		rdfs:domain	stg:PointCloudFile ;
+		rdfs:range      rdfs:Literal .
 		
 stg:asSTEP	a	owl:DatatypeProperty;
 		rdfs:label	"as STEP"@en ,
