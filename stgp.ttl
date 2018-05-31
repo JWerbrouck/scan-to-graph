@@ -56,6 +56,6 @@ stgp:Vault a owl:Class ;
 
 stgp:Acanthus a owl:Class ;
             rdfs:subClassOf product:BuildingElement ;
-			rdfs:label	"Acanthus"@en ,
-						"Acanthus"@nl ;
+			rdfs:label	"Acanthus leaf"@en ,
+					"Acanthusblad"@nl ;
 			rdfs:seeAlso <http://vocab.getty.edu/aat/300164902> .
