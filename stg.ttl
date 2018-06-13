@@ -137,7 +137,7 @@ stg:hasPointCloudFile a owl:ObjectProperty ;
 
 		rdfs:range      stg:PointCloudFile .
 
-stg:hasLocalVersion a owl:ObjectProperty ;
+stg:hasLocalVersion a owl:DataTypeProperty ;
 		rdfs:label      "has Point Cloud File"@en ,
 				"heeft Puntwolkbestand"@nl ;
 
