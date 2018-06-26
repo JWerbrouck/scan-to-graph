@@ -16,8 +16,8 @@
 #################################
 
 <https://github.com/JWerbrouck/Thesis/blob/master/stg.ttl> rdf:type owl:Ontology ;
-    dce:modified "Mai 3rd 2018"^^xsd:string ;
-    owl:versionInfo "Mai 3rd 2018"^^xsd:string ;
+    dce:modified "May 3rd 2018"^^xsd:string ;
+    owl:versionInfo "May 3rd 2018"^^xsd:string ;
     dcterms:issued "June 1st 2018"^^xsd:date ;
     dcterms:title "STG: Scan-to-Graph"@en ;
     dcterms:description """Scan-to-Graph (STG) is a simple vocabulary defining some concepts for linking instances with their geometry serialized in a certain format.
