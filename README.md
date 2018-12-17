@@ -3,7 +3,7 @@ Linking Data: Semantic enrichment of the existing building geometry.
 
 Contains STG ontology and Rhino Plugin for semantic enrichment with Linked Data technologies, created in context of a master dissertation in Engineering: Architecture at Ghent University (author: Jeroen Werbrouck, supervised by Prof. Pieter Pauwels, Willem Bekers and Mathias Bonduel).
 
-The text of the dissertation is available at the Library of the Department of Architecture and Urban Planning at the Faculty of Engineering and Architecture (https://lib.ugent.be/).
+The text of the dissertation is available at the Library of the Department of Architecture and Urban Planning at the Faculty of Engineering and Architecture (https://lib.ugent.be/en/catalog/rug01:002494740?i=0&q=jeroen+werbrouck&type=master).
 
 Repository containing the files created for the scan-to-graph framework: the STG ontology for keeping track of modelling assumptions and sources, the plugin source code as a .zip folder and the plugin documentation (installation, dependencies and main functionality) as pdf. All plugin files are also accessible separately in a non-zipped folder.
 
