@@ -52,7 +52,7 @@ stg:PointCloudFile 	a owl:Class ;
                         	"Verwijst naar een extern puntwolkbestand dat het voorwerp geometrisch representeert (URI)."@nl .
 
 stg:RhinoFile 	rdf:type owl:Class ;
-           	rdfs:subClassOf stg:RepresentingDocument ;
+           	rdfs:subClassOf stg:RepresentingFile ;
 
 		rdfs:label 	".3dm file"@en ,
 				".3dm bestand"@nl ;
