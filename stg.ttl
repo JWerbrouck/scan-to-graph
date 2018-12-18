@@ -59,6 +59,15 @@ stg:PointCloudFile 	a owl:Class ;
         	rdfs:comment    "Refers to an external point cloud file that represents the instance geometrically (URI)."@en ,
                         	"Verwijst naar een extern puntwolkbestand dat het voorwerp geometrisch representeert (URI)."@nl .
 
+stg:STEPFile 	rdf:type owl:Class ;
+           	rdfs:subClassOf stg:ReconstructedFile ;
+
+		rdfs:label 	"STEP file"@en ,
+				"STEP bestand"@nl ;
+
+           	rdfs:comment 	"Refers to a URI that gives acces to a STEP file."@en ,
+				"Verwijst naar een URI die toegang tot een STEP bestand verschaft."@nl .
+
 stg:RhinoFile 	rdf:type owl:Class ;
            	rdfs:subClassOf stg:ReconstructedFile ;
 
