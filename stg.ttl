@@ -41,7 +41,15 @@ stg:SourceFile 	a owl:Class ;
 				"Bestand met informatie over het reële object, dat kan dienen als bronmateriaal bij het modelleren."@nl ;
 		
 		rdfs:subClassOf 	stg:RepresentingFile.						
-						
+
+stg:ReconstructedFile 	a owl:Class ;
+		rdfs:label	"Reconstruction"@en ,
+				"Reconstructie"@nl ;
+		rdfs:comment	"File that was modelled based on real world sources."@en ,
+				"Bestand gemodelleerd op basis van bronnen."@nl ;
+		
+		rdfs:subClassOf 	stg:RepresentingFile.	
+
 stg:PointCloudFile 	a owl:Class ;
 		rdfs:subClassOf 	stg:SourceFile ;
         
@@ -52,7 +60,7 @@ stg:PointCloudFile 	a owl:Class ;
                         	"Verwijst naar een extern puntwolkbestand dat het voorwerp geometrisch representeert (URI)."@nl .
 
 stg:RhinoFile 	rdf:type owl:Class ;
-           	rdfs:subClassOf stg:RepresentingFile ;
+           	rdfs:subClassOf stg:ReconstructedFile ;
 
 		rdfs:label 	".3dm file"@en ,
 				".3dm bestand"@nl ;
