@@ -232,6 +232,13 @@ stg:usedDeviationAnalysis a 	owl:DatatypeProperty ;
 		rdfs:domain	stg:LevelOfAccuracy ;
 		rdfs:range 	rdfs:Literal .
 
+stg:usedEquipment a 	owl:DatatypeProperty ;
+		rdfs:label	"Equipment"@en ;
+		rdfs:comment	"Links a certain source to the equipment that was used for making this source. Currently this links to a Literal."@en ;
+
+		rdfs:domain	stg:SourceFile ;
+		rdfs:range 	rdfs:Literal .
+
 stg:hasLOAvalue a 	owl:DatatypeProperty ;
 		rdfs:label	"LOA value"@en ;
 		rdfs:comment	"States the represented LOA value of a geometry after a geometric deviation analysis"@en ;
