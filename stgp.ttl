@@ -1,61 +1,61 @@
-@prefix product:  	<https://w3id.org/product/BuildingElements#> .
+@prefix beo:  		<http://pi.pauwel.be/voc/buildingelement#> .
 @prefix stgp: 		<https://raw.githubusercontent.com/JWerbrouck/Thesis/master/stg.ttl#> .
 @prefix rdf:  		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:  		<http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl:  		<http://www.w3.org/2002/07/owl#> .
 
 stgp:Fireplace a owl:Class ;
-            rdfs:subClassOf product:BuildingElement ;
+            rdfs:subClassOf beo:BuildingElement ;
 			rdfs:label	"Fireplace"@en ,
 						"Open haard"@nl ;
 			rdfs:seeAlso	<http://vocab.getty.edu/aat/300052267> .
 
 stgp:Fireplace_hood a owl:Class ;
-            rdfs:subClassOf product:BuildingElement ;
+            rdfs:subClassOf beo:BuildingElement ;
 			rdfs:label	"Fireplace hood"@en ,
 					"Overkapping haard"@nl ;
 			rdfs:seeAlso <http://vocab.getty.edu/page/aat/300069730> .
 			
 stgp:Capital a owl:Class ;
-            rdfs:subClassOf product:BuildingElement ;
+            rdfs:subClassOf beo:BuildingElement ;
 			rdfs:label	"Capital"@en ,
 						"Kapiteel"@nl ;
 			rdfs:seeAlso	<http://vocab.getty.edu/aat/300001662> .
 
 stgp:Shaft a owl:Class ;
-            rdfs:subClassOf product:BuildingElement ;
+            rdfs:subClassOf beo:BuildingElement ;
 			rdfs:label	"Shaft"@en ,
 						"Schacht"@nl ;
 			rdfs:seeAlso	<http://vocab.getty.edu/aat/300001754> .
 
 
 stgp:Base a owl:Class ;
-            rdfs:subClassOf product:BuildingElement ;
+            rdfs:subClassOf beo:BuildingElement ;
 			rdfs:label	"Base"@en ,
 						"Voet"@nl ;
 			rdfs:seeAlso	<http://vocab.getty.edu/aat/300233843> .
 
 stgp:WindowFrame a owl:Class ;
-            rdfs:subClassOf product:BuildingElement ;
+            rdfs:subClassOf beo:BuildingElement ;
 			rdfs:label	"Window frame"@en ,
 					"Raamkader"@nl ;
 			rdfs:seeAlso <http://vocab.getty.edu/page/aat/300003118> .
 
 stgp:WindowPane a owl:Class ;
-            rdfs:subClassOf product:BuildingElement ;
+            rdfs:subClassOf beo:BuildingElement ;
 			rdfs:label	"Window pane"@en ,
 					"glaspaneel"@nl ;
 			rdfs:seeAlso <http://vocab.getty.edu/page/aat/300209746> .
 
 stgp:Vault a owl:Class ;
-            rdfs:subClassOf product:BuildingElement ;
+            rdfs:subClassOf beo:BuildingElement ;
 			rdfs:label	"Vault"@en ,
 					"Gewelf"@nl ;
 			rdfs:seeAlso <http://vocab.getty.edu/page/aat/300076608> .
 
 
 stgp:Acanthus a owl:Class ;
-            rdfs:subClassOf product:BuildingElement ;
+            rdfs:subClassOf beo:BuildingElement ;
 			rdfs:label	"Acanthus leaf"@en ,
 					"Acanthusblad"@nl ;
 			rdfs:seeAlso <http://vocab.getty.edu/aat/300164902> .
