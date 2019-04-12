@@ -40,7 +40,7 @@ stg:SourceFile 	a owl:Class ;
 		rdfs:comment	"File that contains information about the real-world object and can serve as a modelling source."@en ,
 				"Bestand met informatie over het reële object, dat kan dienen als bronmateriaal bij het modelleren."@nl ;
 		
-		rdfs:subClassOf 	stg:RepresentingFile.						
+		rdfs:subClassOf 	stg:RepresentingFile .						
 
 stg:ReconstructedFile 	a owl:Class ;
 		rdfs:label	"Reconstruction"@en ,
@@ -48,7 +48,7 @@ stg:ReconstructedFile 	a owl:Class ;
 		rdfs:comment	"File that was modelled based on real world sources."@en ,
 				"Bestand gemodelleerd op basis van bronnen."@nl ;
 		
-		rdfs:subClassOf 	stg:RepresentingFile.	
+		rdfs:subClassOf 	stg:RepresentingFile .	
 
 stg:PointCloudFile 	a owl:Class ;
 		rdfs:subClassOf 	stg:SourceFile ;
@@ -82,7 +82,7 @@ stg:RhinoID 	rdf:type rdfs:Datatype ;
 				"Literal met Rhino-ID"@nl ;
         
         	rdfs:comment    "A Literal (as datatype) that encapsulates a Rhino-ID that identifies an object representation in an stg:RhinoDocument."@en ,
-                        	"Een Literal (as datatype) die een Rhino-ID bevat dat een objectrepresentatie in een stg:RhinoDocument identificeert."@nl.		   
+                        	"Een Literal (as datatype) die een Rhino-ID bevat dat een objectrepresentatie in een stg:RhinoDocument identificeert."@nl .		   
 			
 stg:STEPRepresentation 	rdf:type rdfs:DataType ;
         	rdfs:label      "STEP Literal"@en ,
@@ -162,29 +162,23 @@ stg:hasLocalVersion a owl:DataTypeProperty ;
 				"Verbindt een instantie met een extern (lokaal) bestand dat de geometrie van dit element bevat"@nl ;
 
 		rdfs:subPropertyOf	stg:hasRepresentingFile ;
-		rdfs:domain	stg:PointCloudFile ;
-		rdfs:range      rdfs:Literal .
-		
+		rdfs:domain	stg:PointCloudFile .
+
 stg:asSTEP	a	owl:DatatypeProperty;
 		rdfs:label	"as STEP"@en ,
-				"als STEP"@nl ;
-		
+				"als STEP"@nl ;		
 		rdfs:comment	"connects an instance with a Literal containing its raw STEP serialization"@en ,
 				"Verbindt een instantie met een Literal die de ruwe STEP-serializatie ervan behelst"@nl ;
-
 		rdfs:subPropertyOf	geo:hasSerialization ;
-
 		rdfs:domain		geo:Geometry ;
 		rdfs:range		stg:STEPRepresentation .
 	
 
 stg:hasRhinoID	a		owl:DatatypeProperty ;
 		rdfs:label	"reference to RhinoID"@en ,
-				"refereert naar RhinoID"@nl ;
-		
+				"refereert naar RhinoID"@nl ;		
 		rdfs:comment	"connects an instance with a Literal containing a RhinoID as a reference to the object representation in the stg:RhinoFile"@en ,
 				"Verbindt een instantie met een Literal die de ruwe OBJ-serializatie ervan behelst"@nl ;
-
 		rdfs:domain	geo:Geometry ;
 		rdfs:range	stg:RhinoID .
 
@@ -197,10 +191,8 @@ stg:hasOrigin 	a 		owl:ObjectProperty ;
 stg:hasModellingRemark a 	owl:ObjectProperty ;
 		rdfs:label	"Modelling remark"@en ,
 				"Modelleeropmerking"@nl ;
-
 		rdfs:comment	"Statement about the geometry, such as metadata or an assumption that was made while modelling as-built geometry"@en ,
 				"Opmerking over de geometrie, zoals metadata of een modelleerveronderstelling"@nl ;
-
 		rdfs:domain	geo:Geometry ;
 		rdfs:range 	stg:ModellingRemark .
 
@@ -210,7 +202,6 @@ stg:hasOcclusion a 	owl:ObjectProperty ;
 		rdfs:subPropertyOf stg:hasModellingRemark ;
 		rdfs:comment	"Defines a geometry as an occluded area"@en ,
 				"Definieert een geometrie als een occluded area."@nl ;
-
 		rdfs:domain	geo:Geometry ;
 		rdfs:range 	stg:OccludedGeometry .
 
@@ -218,40 +209,29 @@ stg:hasLOA a 	owl:ObjectProperty ;
 		rdfs:label	"Level of Accuracy"@en ,
 				"Level of Accuracy"@nl ;
 		rdfs:subPropertyOf stg:hasModellingRemark ;
-
 		rdfs:comment	"States that a geometry has a certain (represented) LOA (USIBD definition)"@en ,
 				"Linkt een geometrie aan een bepaalde (represented) LOA (zoals gedefinieerd door USIBD)."@nl ;
-
 		rdfs:domain	geo:Geometry ;
 		rdfs:range 	stg:LevelOfAccuracy .
 
 stg:usedDeviationAnalysis a 	owl:DatatypeProperty ;
 		rdfs:label	"Deviation Analysis"@en ;
 		rdfs:comment	"States that a geometry has a certain (represented) LOA (USIBD definition)"@en ;
-
-		rdfs:domain	stg:LevelOfAccuracy ;
-		rdfs:range 	rdfs:Literal .
+		rdfs:domain	stg:LevelOfAccuracy .
 
 stg:usedEquipment a 	owl:DatatypeProperty ;
 		rdfs:label	"Equipment"@en ;
 		rdfs:comment	"Links a certain source to the equipment that was used for making this source. Currently this links to a Literal."@en ;
-
-		rdfs:domain	stg:SourceFile ;
-		rdfs:range 	rdfs:Literal .
+		rdfs:domain	stg:SourceFile .
 
 stg:hasLOAvalue a 	owl:DatatypeProperty ;
 		rdfs:label	"LOA value"@en ;
 		rdfs:comment	"States the represented LOA value of a geometry after a geometric deviation analysis"@en ;
-
-		rdfs:domain	stg:LevelOfAccuracy ;
-		rdfs:range 	rdfs:Literal .
+		rdfs:domain	stg:LevelOfAccuracy .
 
 stg:denotesRemark	a	owl:DatatypeProperty ;
 		rdfs:label	"reference to modelling remark"@en ,
 				"refereert naar modelleeropmerking"@nl ;
-		
 		rdfs:comment	"connects a geometry with a Literal (string) that contains information about the modelling process"@en ,
 				"Verbindt een geometrie met een Literal (string) die informatie over het modelleerprocess bevat"@nl ;
-
-		rdfs:domain	geo:Geometry ;
-		rdfs:range stg:Assumption .
+		rdfs:domain	geo:Geometry .
