@@ -3,9 +3,9 @@ Linking Data: Semantic enrichment of the existing building geometry.
 
 Contains STG ontology and Rhino Plugin for semantic enrichment with Linked Data technologies, created in context of a master dissertation in Engineering: Architecture at Ghent University (author: Jeroen Werbrouck, supervised by Prof. Pieter Pauwels, Willem Bekers and Mathias Bonduel).
 
-The text of the dissertation is available at the Library of the Department of Architecture and Urban Planning at the Faculty of Engineering and Architecture (https://lib.ugent.be/en/catalog/rug01:002494740?i=0&q=jeroen+werbrouck&type=master).
+The full text of the dissertation is available at the Library of the Department of Architecture and Urban Planning at the Faculty of Engineering and Architecture (https://lib.ugent.be/en/catalog/rug01:002494740?i=0&q=jeroen+werbrouck&type=master).
 
-Repository containing the files created for the scan-to-graph framework: the STG ontology for keeping track of modelling assumptions and sources, the plugin source code as a .zip folder and the plugin documentation (installation, dependencies and main functionality) as pdf. All plugin files are also accessible separately in a non-zipped folder.
+This repository contains the files created for the scan-to-graph framework: the STG ontology for keeping track of modelling assumptions and sources, the plugin source code as a .zip folder and the plugin documentation (installation, dependencies and main functionality) as pdf. All plugin files are also accessible separately in a non-zipped folder.
 
 The plugin allows to define a building site, building, storeys and spaces, which contain objects or are adjacent to them. The objects (Rhino geometries contained in a Layer) are semantically determined used the Building Product Ontology (https://github.com/pipauwel/product). Further on, assumptions, occlusions or other remarks can be mapped to these objects, in case of an as-is geometric 3D reconstruction project. The plugin makes use of Linked Data (using the Resource Description Framework RDF). The application contains four main tabs: 
 1) Project Info Tab: setting the building site, the building itself, its storeys and spaces as well as the georeference coordinates and the GCS for which these geocoordinates are valid.
